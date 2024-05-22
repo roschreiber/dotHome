@@ -2,12 +2,16 @@
 
 ## 📜 INDEX
 
+> [!TIP]
+> A live preview of dotHome can be found at:
+> https://roschreiber.github.io/dotHome/
+
 ### - [✅ TODO](#-todo)
 ### - [❓ USAGE](#-usage)
 
 ## ✅ TODO
 > [!NOTE]  
-> Still very rough todo list. Will be updated asap!
+> Still a very rough todo list. Will be updated asap, once I get new Ideas!
 
 - [ ] Website 
     - [x] Logo, text
