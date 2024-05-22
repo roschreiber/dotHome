@@ -5,8 +5,8 @@
 
 ## 📜 INDEX
 
-### - [✅ TODO](#-todo)
-### - [❓ USAGE](#-usage)
+>- [✅ TODO](#-todo)
+>- [❓ USAGE](#-usage)
 
 ## ✅ TODO
 > [!NOTE]  
@@ -32,5 +32,8 @@
 dotHome can be used as:
 
 - a startpage for your browser
-- a new page for your browser
+    - By configuring it in you browser. See [Firefox](https://support.mozilla.org/en-US/kb/how-to-set-the-home-page) or [Chrome](https://support.google.com/chrome/answer/95314)
+- a new tab page for your browser
+    - Using either this [Firefox](https://addons.mozilla.org/de/firefox/addon/custom-new-tab-page/) or [Chromium](https://chromewebstore.google.com/detail/change-new-tab/mocklpfdimiadpbgamlgehpgpodggahe) Extension
 - ~a kitchen utensil~
+    - sadly not... yet. 
