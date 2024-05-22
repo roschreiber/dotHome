@@ -1,10 +1,9 @@
 # dotHome - hackable startpage.
 
-## 📜 INDEX
-
-> [!TIP]
 > A live preview of dotHome can be found at:
 > https://roschreiber.github.io/dotHome/
+
+## 📜 INDEX
 
 ### - [✅ TODO](#-todo)
 ### - [❓ USAGE](#-usage)
