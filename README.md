@@ -7,6 +7,7 @@
 
 >- [✅ TODO](#-todo)
 >- [❓ USAGE](#-usage)
+>- [🎨 THEMES](#-themes)
 
 ## ✅ TODO
 > [!NOTE]  
