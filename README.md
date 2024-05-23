@@ -16,7 +16,7 @@
 - [ ] Website 
     - [x] Logo (text)
     - [x] Searchbar
-    - [ ] Greet User, different Greetings depending on Timezone
+    - [x] Greet User, different Greetings depending on current Time
     - [ ] "Bookmarks"
         - [ ] Dividable into lists and buttons 
         - [ ] Use either FontAwesome or Lucide.dev for icons
