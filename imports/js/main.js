@@ -1,4 +1,41 @@
+function updateTimeAndGreeting() {
+    const now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+
+    let greeting;
+    if (hours < 12) {
+        greeting = window.greetingMorning;
+    } else if (hours < 17) {
+        greeting = window.greetingNoon;
+    } else if (hours < 21) {
+        greeting = window.greetingEvening;
+    } else {
+        greeting = window.greetingNight;
+    }
+
+    let timeString;
+    if (window.timeFormat === '12') {
+        const period = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        timeString = `${hours}:${minutes} ${period}`;
+    } else {
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        timeString = `${hours}:${minutes}`;
+    }
+
+    const greetingElement = document.querySelector('.greetUser'); // ex: h1
+    greetingElement.textContent = `${timeString} | ${greeting} ${window.userName}!`;
+}
+
 window.onload = function() {
+    updateTimeAndGreeting();
+    setInterval(updateTimeAndGreeting, 60000);
+
+
     const inputElement = document.querySelector('input');
 
     let searchURL;
@@ -26,5 +63,5 @@ window.onload = function() {
                 window.open(searchURL + query, '_self');
             }
         }
-    });
+    })
 };

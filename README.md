@@ -71,6 +71,7 @@ window.logoHoverGradientColor2 = '#45475A';
 window.logoHoverTextShadowColor1 = '#b4befe25';
 window.logoHoverTextShadowColor2 = '#302D41';
 window.backgroundGradientColorBottom = '#1e1e2e';
-window.backgroundGradientColorTop = '#1e1e2e';```
+window.backgroundGradientColorTop = '#1e1e2e';
+window.greetingTextColor = '#b4befe60';```
 
 </details>

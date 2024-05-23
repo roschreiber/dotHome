@@ -23,8 +23,21 @@
     window.logoHoverTextShadowColor2 = '#4e4e51';
     window.backgroundGradientColorBottom = '#272729';
     window.backgroundGradientColorTop = '#28282b';
+    window.greetingTextColor = '#ffffff50';
+    
+    
+  // 👋 GREETINGS
+    // This is used for greeting you depending on the time of the day. A whitespace is added automatically after the greeting.
+    window.userName = 'roschreiber';
 
-  
+    window.timeFormat = '12' // 12 for AM/PM or 24 for 24-hour format
+    
+    window.greetingMorning = 'Good morning,';
+    window.greetingNoon = 'Good afternoon,';
+    window.greetingEvening = 'Good evening,';
+    window.greetingNight = 'Good night,'
+    
+    
   // 🔎 SEARCH ENGINE
     window.searchEngine = 'DUCKDUCKGO' // GOOGLE, DUCKDUCKGO, DISROOT (SEARX) or CUSTOM
     window.customSearchURL = 'https://www.search.engine/search?q='; // will only be used if your searchEngine is set to "CUSTOM", fill out with an empty query url
@@ -53,3 +66,4 @@
     document.documentElement.style.setProperty('--background-gradient-color-bottom', window.backgroundGradientColorBottom);
     document.documentElement.style.setProperty('--background-gradient-color-top', window.backgroundGradientColorTop);
     document.documentElement.style.setProperty('--input-placeholder-color', window.inputPlaceholderColor);
+    document.documentElement.style.setProperty('--greeting-text-color', window.greetingTextColor);
