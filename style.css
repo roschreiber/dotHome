@@ -8,6 +8,7 @@
     --input-focus-border-color: #fff;
     --input-focus-shadow-color: #ffffff26;
     --input-focus-shadow-inset-color: #ffffff7d;
+    --input-placeholder-color: #fff;
     --logo-gradient-color-1: #2b2b2e;
     --logo-gradient-color-2: #333336;
     --logo-text-shadow-color-1: #222225;
@@ -47,6 +48,11 @@ input {
     transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
     -webkit-transform: rotateX(0deg) rotateY(-12.64788975654116deg);
     transform: rotateX(0deg) rotateY(-12.64788975654116deg);
+}
+
+input::placeholder {
+    color: var(--input-placeholder-color);
+    opacity: 0.5;
 }
   
 input:hover {

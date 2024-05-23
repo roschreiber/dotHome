@@ -12,6 +12,7 @@
     window.inputFocusBorderColor = '#fff';
     window.inputFocusShadowColor = '#ffffff26';
     window.inputFocusShadowInsetColor = '#ffffff7d';
+    window.inputPlaceholderColor = '#fff'; //Opacity of the Placeholder is 0.5
     window.logoGradientColor1 = '#2b2b2e';
     window.logoGradientColor2 = '#333336';
     window.logoTextShadowColor1 = '#222225';
@@ -51,3 +52,4 @@
     document.documentElement.style.setProperty('--logo-hover-text-shadow-color-2', window.logoHoverTextShadowColor2);
     document.documentElement.style.setProperty('--background-gradient-color-bottom', window.backgroundGradientColorBottom);
     document.documentElement.style.setProperty('--background-gradient-color-top', window.backgroundGradientColorTop);
+    document.documentElement.style.setProperty('--input-placeholder-color', window.inputPlaceholderColor);
