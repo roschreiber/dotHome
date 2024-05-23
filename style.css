@@ -30,6 +30,7 @@
 body {
     font-family: 'Monaspace Krypton Bold', monospace;
     margin: 0;
+    overflow: hidden;
 }
 
 input {
