@@ -48,6 +48,9 @@ Feel free to just plug them into your config.js, they (should) be actively maint
 
 <summary>Catpuccin Mocha</summary>
 
+![image](https://github.com/roschreiber/dotHome/assets/87716938/951c762b-62aa-4889-989f-7a8d5e7f88f6)
+
+
 ```window.inputBorderColor = '#6e6c7e';
 window.inputTextColor = '#b4befe';
 window.inputBackgroundColor = '#1e1e2e';
