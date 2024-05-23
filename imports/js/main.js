@@ -19,10 +19,12 @@ window.onload = function() {
             console.error('Invalid search engine specified, did you mean CUSTOM?');
     }
 
-    inputElement.addEventListener('change', function() {
-        const query = encodeURIComponent(inputElement.value);
-        if (query.trim() !== '') {
-            window.open(searchURL + query, '_blank');
+    inputElement.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            const query = encodeURIComponent(inputElement.value);
+            if (query.trim() !== '') {
+                window.open(searchURL + query, '_self');
+            }
         }
     });
 };
