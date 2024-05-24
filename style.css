@@ -20,6 +20,7 @@
     --background-gradient-color-bottom: #272729;
     --background-gradient-color-top: #28282b;
     --greeting-text-color: #ffffff50;
+    --weather-icon-color: #ffffff50;
 }
 
 @font-face {
@@ -56,6 +57,12 @@ input {
     transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
     -webkit-transform: rotateX(0deg) rotateY(-12.64788975654116deg);
     transform: rotateX(0deg) rotateY(-12.64788975654116deg) translate(0%, 15%);
+}
+
+.weather svg {
+    vertical-align: middle;
+    margin-bottom: 5px;
+    color: var(--weather-icon-color);
 }
 
 input::placeholder {

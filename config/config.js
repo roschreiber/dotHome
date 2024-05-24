@@ -24,6 +24,7 @@
     window.backgroundGradientColorBottom = '#272729';
     window.backgroundGradientColorTop = '#28282b';
     window.greetingTextColor = '#ffffff50';
+    window.weatherIconColor = '#ffffff50';
     
     
   // 👋 GREETINGS
@@ -36,6 +37,14 @@
     window.greetingNoon = 'Good afternoon,';
     window.greetingEvening = 'Good evening,';
     window.greetingNight = 'Good night,'
+
+  
+  // ☁️ WEATHER
+    // This is used for weather info. You can get your API key from https://openweathermap.org/api
+    window.apiKey = 'YOUR_API_KEY';
+    window.unit = 'C'; // C for Celsius or F for Fahrenheit
+    window.latitude = 'LATTITUDE';
+    window.longitude = 'LONGITUDE';
     
     
   // 🔎 SEARCH ENGINE
@@ -67,3 +76,4 @@
     document.documentElement.style.setProperty('--background-gradient-color-top', window.backgroundGradientColorTop);
     document.documentElement.style.setProperty('--input-placeholder-color', window.inputPlaceholderColor);
     document.documentElement.style.setProperty('--greeting-text-color', window.greetingTextColor);
+    document.documentElement.style.setProperty('--weather-icon-color', window.weatherIconColor);

@@ -29,13 +29,58 @@ function updateTimeAndGreeting() {
         timeString = `${hours}:${minutes}`;
     }
 
-    const greetingElement = document.querySelector('.greetUser'); // ex: h1
-    greetingElement.textContent = `${timeString} | ${greeting} ${window.userName}!`; // TODO: Add weather information with lucide icon
+const weatherIconMap = { // Soon: add more Icons, move to config.js
+    '01d': './imports/images/sun-medium.svg',
+    '01n': './imports/images/moon.svg',
+    '02d': './imports/images/cloud.svg',
+    '02n': './imports/images/cloud.svg',
+    '03d': './imports/images/cloud.svg',
+    '03n': './imports/images/cloud.svg',
+    '04d': './imports/images/cloud.svg',
+    '04n': './imports/images/cloud.svg',
+    '09d': './imports/images/cloud-rain.svg',
+    '09n': './imports/images/cloud-rain.svg',
+    '10d': './imports/images/cloud-rain.svg',
+    '10n': './imports/images/cloud-rain.svg',
+    '11d': './imports/images/cloud-lightning.svg',
+    '11n': './imports/images/cloud-lightning.svg',
+    '13d': './imports/images/snowflake.svg',
+    '13n': './imports/images/snowflake.svg',
+    '50d': './imports/images/cloud-fog.svg',
+    '50n': './imports/images/cloud-fog.svg',
+};
+
+fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${window.latitude}&lon=${window.longitude}&appid=${window.apiKey}&units=${window.unit === 'C' ? 'metric' : 'imperial'}`)
+    .then(response => {
+        if (response.status !== 200) {
+            throw new Error(response.status);
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.main) {
+            const temperature = Math.round(data.main.temp);
+            const weatherIcon = data.weather[0].icon;
+
+            const iconPath = weatherIconMap[weatherIcon];
+
+            fetch(iconPath)
+            .then(response => response.text())
+            .then(svg => {
+                const greetingElement = document.querySelector('.greetUser');
+                greetingElement.innerHTML = `${timeString} | ${greeting} ${window.userName}! | ${temperature}°${window.unit} <span class="weather">${svg}</span>`; // Redo soon
+            });
+        }
+    })
+    .catch(error => { // For demonstration purposes
+        const greetingElement = document.querySelector('.greetUser');
+        greetingElement.innerHTML = `${timeString} | ${greeting} ${window.userName}! | ${error.message}`;
+    });
 }
 
 window.onload = function() {
     updateTimeAndGreeting();
-    setInterval(updateTimeAndGreeting, 60000); // Bad way of doing it since it only updates every 60s after the website has loaded, could be optimized
+    setInterval(updateTimeAndGreeting, 60000); // Bad way of doing it since it only updates every 60s after the website has loaded and not in real time, could be optimized
 
 
     const inputElement = document.querySelector('input');
