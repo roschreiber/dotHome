@@ -30,7 +30,7 @@
     // This is used for greeting you depending on the time of the day. A whitespace is added automatically after the greeting.
     window.userName = 'roschreiber';
 
-    window.timeFormat = '12' // 12 for AM/PM or 24 for 24-hour format
+    window.timeFormat = '24' // 12 for AM/PM or 24 for 24-hour format
     
     window.greetingMorning = 'Good morning,';
     window.greetingNoon = 'Good afternoon,';

@@ -4,7 +4,9 @@ function updateTimeAndGreeting() {
     let minutes = now.getMinutes();
 
     let greeting;
-    if (hours < 12) {
+    if (hours < 6) {
+        greeting = window.greetingNight;
+    } else if (hours < 12) {
         greeting = window.greetingMorning;
     } else if (hours < 17) {
         greeting = window.greetingNoon;
@@ -28,12 +30,12 @@ function updateTimeAndGreeting() {
     }
 
     const greetingElement = document.querySelector('.greetUser'); // ex: h1
-    greetingElement.textContent = `${timeString} | ${greeting} ${window.userName}!`;
+    greetingElement.textContent = `${timeString} | ${greeting} ${window.userName}!`; // TODO: Add weather information with lucide icon
 }
 
 window.onload = function() {
     updateTimeAndGreeting();
-    setInterval(updateTimeAndGreeting, 60000);
+    setInterval(updateTimeAndGreeting, 60000); // Bad way of doing it since it only updates every 60s after the website has loaded, could be optimized
 
 
     const inputElement = document.querySelector('input');
