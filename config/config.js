@@ -45,7 +45,27 @@
     window.unit = 'C'; // C for Celsius or F for Fahrenheit
     window.latitude = 'LATTITUDE';
     window.longitude = 'LONGITUDE';
-    
+
+    window.weatherIconMap = { // For reference, look at https://openweathermap.org/weather-conditions
+      '01d': './imports/images/svg/sun-medium.svg',
+      '01n': './imports/images/svg/moon.svg',
+      '02d': './imports/images/svg/cloud.svg',
+      '02n': './imports/images/svg/cloud.svg',
+      '03d': './imports/images/svg/cloud.svg',
+      '03n': './imports/images/svg/cloud.svg',
+      '04d': './imports/images/svg/cloud.svg',
+      '04n': './imports/images/svg/cloud.svg',
+      '09d': './imports/images/svg/cloud-rain.svg',
+      '09n': './imports/images/svg/cloud-rain.svg',
+      '10d': './imports/images/svg/cloud-rain.svg',
+      '10n': './imports/images/svg/cloud-rain.svg',
+      '11d': './imports/images/svg/cloud-lightning.svg',
+      '11n': './imports/images/svg/cloud-lightning.svg',
+      '13d': './imports/images/svg/snowflake.svg',
+      '13n': './imports/images/svg/snowflake.svg',
+      '50d': './imports/images/svg/cloud-fog.svg',
+      '50n': './imports/images/svg/cloud-fog.svg',
+  };
     
   // 🔎 SEARCH ENGINE
     window.searchEngine = 'DUCKDUCKGO' // GOOGLE, DUCKDUCKGO, DISROOT (SEARX) or CUSTOM
