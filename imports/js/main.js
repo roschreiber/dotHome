@@ -1,9 +1,11 @@
-function updateTimeAndGreeting() {
+let timeString;
+let greeting;
+
+function updateTimeAndGreeting(temperature, svg) {
     const now = new Date();
     let hours = now.getHours();
     let minutes = now.getMinutes();
 
-    let greeting;
     if (hours < 6) {
         greeting = window.greetingNight;
     } else if (hours < 12) {
@@ -16,7 +18,6 @@ function updateTimeAndGreeting() {
         greeting = window.greetingNight;
     }
 
-    let timeString;
     if (window.timeFormat === '12') {
         const period = hours >= 12 ? 'PM' : 'AM';
         hours = hours % 12;
@@ -29,35 +30,41 @@ function updateTimeAndGreeting() {
         timeString = `${hours}:${minutes}`;
     }
 
-fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${window.latitude}&lon=${window.longitude}&appid=${window.apiKey}&units=${window.unit === 'C' ? 'metric' : 'imperial'}`)
-    .then(response => {
-        if (response.status !== 200) {
-            throw new Error(response.status);
-        }
-        return response.json();
-    })
-    .then(data => {
-        if (data.main) {
-            const temperature = Math.round(data.main.temp);
-            const weatherIcon = data.weather[0].icon;
+    const greetingElement = document.querySelector('.greetUser');
+    greetingElement.innerHTML = `${timeString} | ${greeting} ${window.userName}! | ${temperature ? `${temperature}°${window.unit} <span class="weather">${svg}</span>` : ''}`;
+}
 
-            const iconPath = weatherIconMap[weatherIcon];
+function fetchWeather() {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${window.latitude}&lon=${window.longitude}&appid=${window.apiKey}&units=${window.unit === 'C' ? 'metric' : 'imperial'}`)
+        .then(response => {
+            if (response.status !== 200) {
+                throw new Error(response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.main) {
+                const temperature = Math.round(data.main.temp);
+                const weatherIcon = data.weather[0].icon;
 
-            fetch(iconPath)
-            .then(response => response.text())
-            .then(svg => {
-                const greetingElement = document.querySelector('.greetUser');
-                greetingElement.innerHTML = `${timeString} | ${greeting} ${window.userName}! | ${temperature}°${window.unit} <span class="weather">${svg}</span>`; // Redo soon
-            });
-        }
-    })
-    .catch(error => { // For demonstration purposes
-        const greetingElement = document.querySelector('.greetUser');
-        greetingElement.innerHTML = `${timeString} | ${greeting} ${window.userName}! | ${error.message}`;
-    });
+                const iconPath = window.weatherIconMap[weatherIcon];
+
+                fetch(iconPath)
+                    .then(response => response.text())
+                    .then(svg => {
+                        updateTimeAndGreeting(temperature, svg);
+                        setInterval(() => updateTimeAndGreeting(temperature, svg), 60000);
+                    });
+            }
+        })
+        .catch(error => {
+            const greetingElement = document.querySelector('.greetUser');
+            greetingElement.innerHTML = `${timeString} | ${greeting} ${window.userName}! | ${error.message}`;
+        });
 }
 
 window.onload = function() {
+    fetchWeather();
     updateTimeAndGreeting();
     setInterval(updateTimeAndGreeting, 60000); // Bad way of doing it since it only updates every 60s after the website has loaded and not in real time, could be optimized
 
