@@ -25,6 +25,7 @@
     window.backgroundGradientColorTop = '#28282b';
     window.greetingTextColor = '#ffffff50';
     window.weatherIconColor = '#ffffff50';
+    window.backgroundImageLink = ''; // Your web image link here
     
     
   // 👋 GREETINGS
@@ -69,6 +70,7 @@
     
   // 🔎 SEARCH ENGINE
     window.searchEngine = 'DUCKDUCKGO' // GOOGLE, DUCKDUCKGO, DISROOT (SEARX) or CUSTOM
+    window.searchEngineName = 'DuckDuckGo' // Name of your search engine, will be displayed as the placeholder for the input box
     window.customSearchURL = 'https://www.search.engine/search?q='; // will only be used if your searchEngine is set to "CUSTOM", fill out with an empty query url
 
 
@@ -96,4 +98,5 @@
     document.documentElement.style.setProperty('--background-gradient-color-top', window.backgroundGradientColorTop);
     document.documentElement.style.setProperty('--input-placeholder-color', window.inputPlaceholderColor);
     document.documentElement.style.setProperty('--greeting-text-color', window.greetingTextColor);
-    document.documentElement.style.setProperty('--weather-icon-color', window.weatherIconColor);
+    document.documentElement.style.setProperty('--weather-icon-color', window.weatherIconColor);+
+    document.documentElement.style.setProperty('--background-image-link', `url(${window.backgroundImageLink})`);
