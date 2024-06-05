@@ -5,7 +5,7 @@
     // Use pre-made themes if you don't know what you're doing.
     window.inputBorderColor = '#2b2b28';
     window.inputTextColor = '#fff';
-    window.inputBackgroundColor = '#2D2D2D';
+    window.inputBackgroundColor = '#29292C';
     window.inputShadowColor = '#00000026';
     window.inputShadowInsetColor = '#0000007d';
     window.inputTextShadowColor = '#ffffffa8';
