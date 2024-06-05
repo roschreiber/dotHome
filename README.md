@@ -1,13 +1,25 @@
 # dotHome - hackable startpage.
 
-> A live preview of dotHome can be found at:
-> https://roschreiber.github.io/dotHome/
+> dotHome is a hackable startpage for your browser. 
+> You can preview dotHome [here](https://roschreiber.github.io/dotHome/).
 
 ## 📜 INDEX
 
+>- [🎉 FEATURES](#-features)
 >- [✅ TODO](#-todo)
 >- [❓ USAGE](#-usage)
 >- [🎨 THEMES](#-themes)
+
+## 🎉 FEATURES
+
+dotHome currently includes the following features:
+
+- **Easy configuration through a single file.**
+- Customizable **Color Themes**
+- **Clock** changeable between **12 / 24** hour formats
+- **Greetings** are easily modifiable
+- **Weather** for your location through [OpenWeatherMap](https://openweathermap.org/)
+- **Icons** from [Lucide.dev](https://lucide.dev/)
 
 ## ✅ TODO
 > [!NOTE]  
@@ -16,7 +28,8 @@
 - [ ] Website 
     - [x] Logo (text)
     - [x] Searchbar
-    - [x] Greet User, different Greetings depending on current Time
+    - [x] Greet User, different Greetings depending on current time
+    - [ ] Change current default theme
     - [ ] "Bookmarks"
         - [ ] Dividable into lists and buttons 
         - [ ] Use either FontAwesome or Lucide.dev for icons
